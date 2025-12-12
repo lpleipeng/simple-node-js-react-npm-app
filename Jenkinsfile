@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('Build'){
 			steps{
-				sh 'npm install'
+				sh '/var/lib/jenkins/.nvm/versions/node/v24.12.0/bin/npm install'
 			}
 		}
 	}
