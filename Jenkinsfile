@@ -3,18 +3,12 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh '''
-                    export PATH="/var/lib/jenkins/.nvm/versions/node/v24.12.0/bin:$PATH"
-                    /var/lib/jenkins/.nvm/versions/node/v24.12.0/bin/npm install
-                '''
+                sh 'npm install'
             }
         }
-        stage('Build') {
+        stage('Build Project') {
             steps {
-                sh '''
-                    export PATH="/var/lib/jenkins/.nvm/versions/node/v24.12.0/bin:$PATH"
-                    /var/lib/jenkins/.nvm/versions/node/v24.12.0/bin/npm run build
-                '''
+                sh 'npm run build'
             }
         }
     }
